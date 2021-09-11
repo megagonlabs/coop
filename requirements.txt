@@ -1,0 +1,13 @@
+torch~=1.7.0
+transformers~=3.4.0
+sentencepiece
+click
+py-rouge
+tqdm
+pandas
+jsonnet
+allennlp==1.2.0
+tensorboard
+requests
+nltk
+huggingface_hub
