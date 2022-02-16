@@ -38,6 +38,7 @@ class VAE(nn.Module):
                 config = json.load(open(model_dir / "config.json"))
                 config["device"] = self.device
                 model_path = model_dir / "pytorch_model.bin"
+                state_dict = torch.load(model_path, map_location=lambda storage, loc: storage)
 
             finally:
                 # Clean-up
@@ -51,6 +52,7 @@ class VAE(nn.Module):
             config = json.load(open(cached_download(url=config_url, library_name="coop")))
             model_url = hf_hub_url(str(model_name_or_path), filename="pytorch_model.bin")
             model_path = cached_download(url=model_url, library_name="coop")
+            state_dict = torch.load(model_path, map_location=lambda storage, loc: storage)
 
             if "bimeanvae" in str(model_name_or_path):
                 spm_url = hf_hub_url(str(model_name_or_path), filename="spm.model")
@@ -59,7 +61,7 @@ class VAE(nn.Module):
 
         self.src_tokenizer, self.tgt_tokenizers = load_tokenizer(config)
         self.model = build_model(config).eval()
-        self.model.load_state_dict(torch.load(model_path, map_location=lambda storage, loc: storage))
+        self.model.load_state_dict(state_dict)
         self.model.to(self.device)
 
     @torch.no_grad()
