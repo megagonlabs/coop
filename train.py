@@ -123,10 +123,10 @@ class Trainer:
     def _finalize(self):
         archive_file = self.log_dir / "model.tar.gz"
         with tarfile.open(archive_file, "w:gz") as archive:
-            archive.add(self.log_dir / "config.json")
+            archive.add(self.log_dir / "config.json", arcname="config.json")
             archive.add(self.log_dir / "best.th", arcname="pytorch_model.bin")
             if isinstance(self.model, BiMeanVAE):
-                archive.add(self.log_dir / "spm.model")
+                archive.add(self.log_dir / "spm.model", arcname="spm.model")
 
     def _evaluate(self):
         self.model.eval()
