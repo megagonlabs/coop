@@ -1,6 +1,6 @@
 torch~=1.7.0
 transformers~=3.4.0
-sentencepiece~=0.1.94
+sentencepiece==0.1.94
 click
 py-rouge
 tqdm
