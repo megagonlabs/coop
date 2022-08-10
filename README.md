@@ -2,6 +2,7 @@
 
 [![Conference](https://img.shields.io/badge/findings_of_emnlp-2021-red)](https://aclanthology.org/2021.findings-emnlp.328)
 [![arXiv](https://img.shields.io/badge/arxiv-2104.01371-success)](https://arxiv.org/abs/2104.01371/)
+[![arXiv](https://img.shields.io/badge/colab-demo-yellow)](https://colab.research.google.com/drive/1kyWw9H6TBfpuVrQH_35ofeScX1E-DSpb?usp=sharing)
 
 Code for [Convex Aggregation for Opinion Summarization](https://arxiv.org/abs/2104.01371).
 
