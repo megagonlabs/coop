@@ -5,7 +5,6 @@ import click
 import pandas as pd
 import rouge
 import torch
-from tqdm import tqdm
 
 from coop.util import load_tokenizer, load_data, build_model
 
