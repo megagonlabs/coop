@@ -5,6 +5,7 @@ import click
 import pandas as pd
 import rouge
 import torch
+from tqdm import tqdm
 
 from coop.util import load_tokenizer, load_data, build_model
 
@@ -48,7 +49,7 @@ def main(log_dir, debug):
     scores = {}
     for data_type in ("dev", "test"):
         data = eval(data_type)
-        scores[data_type] = evaluate(model, data, debug)
+        scores[data_type] = evaluate(model, data, debug=debug)
 
     df = pd.DataFrame(scores)
     df.sort_index(inplace=True)
