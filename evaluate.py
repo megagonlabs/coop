@@ -48,7 +48,7 @@ def main(log_dir, debug):
     scores = {}
     for data_type in ("dev", "test"):
         data = eval(data_type)
-        scores[data_type] = evaluate(model, data, debug)
+        scores[data_type] = evaluate(model, data, debug=debug)
 
     df = pd.DataFrame(scores)
     df.sort_index(inplace=True)
