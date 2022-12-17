@@ -296,10 +296,10 @@ $ python train.py config/bimeanvae/yelp.jsonnet -s log/bimeanvae/yelp/ex1
 ## Evaluation
 To evaluate the model with our proposed framework, ```coop```, you can simply run the following:
 ```bash
-$ python coop.search.py <model dir path>
+$ python coop/search.py <model dir path>
 ```
 
 For example,
 ```bash
-$ python coop.search.py log/bimeanvae/yelp/ex1
+$ python coop/search.py log/bimeanvae/yelp/ex1
 ```

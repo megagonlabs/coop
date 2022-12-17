@@ -11,10 +11,10 @@ import pandas as pd
 import rouge
 import torch
 
-from models import Model
-from reader import ReviewTest, OptimusTest
-from tokenizer import Tokenizer
-from util import avg, overlap, oracle, load_tokenizer, load_data, build_model, BAD_WORDS, powerset
+from coop.models import Model
+from coop.reader import ReviewTest, OptimusTest
+from coop.tokenizer import Tokenizer
+from coop.util import avg, overlap, oracle, load_tokenizer, load_data, build_model, BAD_WORDS, powerset
 
 
 def brute_force_gen(model: Model,
